@@ -1,0 +1,125 @@
+﻿<UserControl
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:tb="http://www.hardcodet.net/taskbar"
+  xmlns:local="clr-namespace:WordpressDrive"
+  xmlns:p="clr-namespace:WordpressDrive.Properties"
+  mc:Ignorable="d"
+  x:Class="WordpressDrive.IconToolTip"
+  x:Name="me"
+  Width="335"
+  DataContext="{x:Static local:WPWinFspService.Instance}"
+  Height="170" d:DataContext="{d:DesignInstance {x:Type local:WPWinFspService}}">
+   
+    <UserControl.Resources>
+        <local:HostTypeToStringConverter x:Key="HostTypeToStringConverter"/>
+        <Storyboard x:Key="FadeIn">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1" KeySpline="0,0,0.46,0.969"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="image" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.6"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="FadeOut">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="0.25"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="image" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="0.6"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Style TargetType="{x:Type Label}" x:Key="HlpLabelStyle">
+            <Setter Property="FontStyle" Value="Italic"/>
+            <Setter Property="Padding" Value="5,0"/>
+        </Style>
+        <Style TargetType="{x:Type Label}" x:Key="HlpTextStyle" BasedOn="{StaticResource HlpLabelStyle}">
+            <Setter Property="FontStyle" Value="Normal"/>
+        </Style>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="tb:TaskbarIcon.ToolTipOpened">
+            <BeginStoryboard Storyboard="{StaticResource FadeIn}" x:Name="FadeIn_BeginStoryboard"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="tb:TaskbarIcon.ToolTipClose">
+            <BeginStoryboard Storyboard="{StaticResource FadeOut}" x:Name="FadeOut_BeginStoryboard"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+
+    <Grid
+    x:Name="LayoutRoot" Height="Auto">
+        <Border
+      HorizontalAlignment="Stretch"
+      VerticalAlignment="Stretch"
+      Width="Auto"
+      Height="Auto"
+      CornerRadius="6,6,6,6"
+      BorderThickness="3,3,3,3"
+      Margin="0,0,5,5" x:Name="border">
+            <Border.Effect>
+                <DropShadowEffect
+          Color="#FF7A7A7A" />
+            </Border.Effect>
+            <Border.Background>
+                <LinearGradientBrush
+          EndPoint="0.5,1"
+          StartPoint="0.5,0">
+                    <GradientStop
+            Color="#FFFFD283"
+            Offset="0" />
+                    <GradientStop
+            Color="#FFFFFFFF"
+            Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Image
+          HorizontalAlignment="Left"
+          Margin="10,10,0,26"
+          Width="32"
+          Source="/Resources/SystemTrayApp.ico"
+          Stretch="Fill"
+          VerticalAlignment="Top"
+          RenderTransformOrigin="0.792,0.486" x:Name="image" Height="32" />
+
+        <TextBlock
+      Margin="82,10,20,0"
+      TextWrapping="Wrap"
+      Height="32"
+      VerticalAlignment="Top"
+      FontSize="16"
+      FontWeight="Bold"
+      Foreground="#FF575757"><Run
+        Text="Wordpress Drive" /></TextBlock>
+
+        <Grid Margin="22,49,20,18">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition  Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Content="{x:Static p:Resources.Connection}"   Margin="0,0,0,4"   />
+            <Label Grid.Column="1" Grid.Row="0" Content="{Binding ConnectedTo, Mode=OneWay, Converter={StaticResource HostTypeToStringConverter}}" FontWeight="Bold"     />
+            <!--<Label Grid.Column="1" Grid.Row="0" Content="{Binding ElementName=me, Path=InfoText}" FontWeight="Bold"     />-->
+            <Label Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" Content="{x:Static p:Resources.icon_mouse_actions}" FontWeight="Bold"     />
+            <Label Grid.Column="0" Grid.Row="2" Content="{x:Static p:Resources.right_mb_click}"  Style="{DynamicResource HlpLabelStyle}"   />
+            <Label Grid.Column="1" Grid.Row="2" Content="{x:Static p:Resources.open_popupmenu}"  Style="{DynamicResource HlpTextStyle}"  />
+            <Label Grid.Column="0" Grid.Row="3" Content="{x:Static p:Resources.left_mb_click}"  Style="{DynamicResource HlpLabelStyle}"  />
+            <Label Grid.Column="1" Grid.Row="3" Content="{x:Static p:Resources.open_settings}" Style="{DynamicResource HlpTextStyle}" />
+            <Label Grid.Column="0" Grid.Row="4" Content="{x:Static p:Resources.left_mb_dblclick}"  Style="{DynamicResource HlpLabelStyle}"  />
+            <Label Grid.Column="1" Grid.Row="4" Content="{x:Static p:Resources.connect_default_host}"  Style="{DynamicResource HlpTextStyle}" />
+        </Grid>
+    </Grid>
+</UserControl>

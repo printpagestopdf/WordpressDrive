@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Anonymous_Login" xml:space="preserve">
+    <value>anonyme Anmeldung</value>
+  </data>
+  <data name="Attachments" xml:space="preserve">
+    <value>Medien</value>
+    <comment>Attachments</comment>
+  </data>
+  <data name="Authentication" xml:space="preserve">
+    <value>Anmeldung</value>
+  </data>
+  <data name="autoclose_sync_dialog" xml:space="preserve">
+    <value>Nach Beenden schließen</value>
+    <comment>Close when finished</comment>
+  </data>
+  <data name="basic_settings" xml:space="preserve">
+    <value>Grundeinstellungen</value>
+    <comment>basic settings</comment>
+  </data>
+  <data name="cache_these_itemtypes" xml:space="preserve">
+    <value>Diese Elementtypen Cachen:</value>
+    <comment>Cache these item types:</comment>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Abbruch</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Löschen</value>
+    <comment>Delete</comment>
+  </data>
+  <data name="directory_not_exist" xml:space="preserve">
+    <value>Verzeichnis existiert nicht</value>
+    <comment>Directory does not exist</comment>
+  </data>
+  <data name="display_name" xml:space="preserve">
+    <value>Anzeigename</value>
+    <comment>Display Name</comment>
+  </data>
+  <data name="do_synchronize" xml:space="preserve">
+    <value>synchronisieren!</value>
+    <comment>do synchronize (button)</comment>
+  </data>
+  <data name="do_you_want_delete" xml:space="preserve">
+    <value>Sind sie sicher, dass sie löschen wollen?</value>
+    <comment>Do you really want to delete</comment>
+  </data>
+  <data name="drive" xml:space="preserve">
+    <value>Laufwerk</value>
+    <comment>Drive</comment>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Fehler</value>
+    <comment>error</comment>
+  </data>
+  <data name="extended_settings" xml:space="preserve">
+    <value>Erweiterte Einstellungen</value>
+    <comment>extended settings</comment>
+  </data>
+  <data name="filename" xml:space="preserve">
+    <value>Dateiname</value>
+    <comment>filename</comment>
+  </data>
+  <data name="Host" xml:space="preserve">
+    <value>Host</value>
+    <comment>Host</comment>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Sprache</value>
+    <comment>Language</comment>
+  </data>
+  <data name="Login_cancelled" xml:space="preserve">
+    <value>Anmeldung durch Benutzer abgebrochen</value>
+    <comment>Login cancelled by User</comment>
+  </data>
+  <data name="Login_failed_retry" xml:space="preserve">
+    <value>Anmeldung fehlgeschlagen, bitte versuchen sie es erneut</value>
+    <comment>Login failed, please try again</comment>
+  </data>
+  <data name="max_items_per_directory" xml:space="preserve">
+    <value>Max. Directoryelemente</value>
+    <comment>Max Items per Directory</comment>
+  </data>
+  <data name="msgbox_omit_sync_question" xml:space="preserve">
+    <value>Wollen sie wirklich alle Änderungen verwerfen?</value>
+    <comment>msgbox: leave without sync</comment>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Neu</value>
+    <comment>New</comment>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="omit_synchronize" xml:space="preserve">
+    <value>Nicht synchronisieren</value>
+    <comment>omit synchronize (button)</comment>
+  </data>
+  <data name="open_cache_directory" xml:space="preserve">
+    <value>Cache Verzeichnis öffnen</value>
+    <comment>Open Cache Directory</comment>
+  </data>
+  <data name="open_config_directory" xml:space="preserve">
+    <value>Konfigurationsverzeichnis</value>
+    <comment>Open Config Directory</comment>
+  </data>
+  <data name="other_items" xml:space="preserve">
+    <value>Andere Elementtypen</value>
+    <comment>Other items</comment>
+  </data>
+  <data name="Outstanding_synchronizations" xml:space="preserve">
+    <value>offene Synchronisationen</value>
+    <comment>outstanding synchronizations</comment>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Passwort</value>
+  </data>
+  <data name="please_select_item" xml:space="preserve">
+    <value>Bitte ein Element auswählen</value>
+    <comment>Please select an item</comment>
+  </data>
+  <data name="select_sync_item" xml:space="preserve">
+    <value>Gewählt</value>
+    <comment>select(sync dialog column)</comment>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Einstellungen</value>
+    <comment>Settings window title</comment>
+  </data>
+  <data name="show_sync_dialog" xml:space="preserve">
+    <value>Dialog anzeigen</value>
+    <comment>Show Dialog</comment>
+  </data>
+  <data name="state_sync_item" xml:space="preserve">
+    <value>Status</value>
+    <comment>state (sync dialog column)</comment>
+  </data>
+  <data name="Supply_auth_data" xml:space="preserve">
+    <value>Anmeldedaten eingeben oder "anonyme Anmeldung" wählen</value>
+    <comment>Supply Login Information or choose anonymous Login</comment>
+  </data>
+  <data name="Synchronize" xml:space="preserve">
+    <value>Synchronisation</value>
+    <comment>Synchronize (Title)</comment>
+  </data>
+  <data name="syncronizing_caching" xml:space="preserve">
+    <value>Synchronisation</value>
+    <comment>Synchronizing</comment>
+  </data>
+  <data name="sync_dialog" xml:space="preserve">
+    <value>Synchronizationsdialog:</value>
+    <comment>Synchronization Dialog:</comment>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>System</value>
+    <comment>System</comment>
+  </data>
+  <data name="task_sync_item" xml:space="preserve">
+    <value>Aufgabe</value>
+    <comment>taks(sync dialog column)</comment>
+  </data>
+  <data name="tt_create_host" xml:space="preserve">
+    <value>Neuen Host Eintrag erstellen</value>
+    <comment>tt: Create host entry</comment>
+  </data>
+  <data name="tt_delete_host" xml:space="preserve">
+    <value>Ausgewälten Host endgültig löschen</value>
+    <comment>tt: Delete host entry</comment>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>Typ</value>
+    <comment>type</comment>
+  </data>
+  <data name="Unknow_connect_error" xml:space="preserve">
+    <value>Unbekannter Fehler, Verbindung zu {0} fehlgeschlagen</value>
+    <comment>Unknown error could not connect to {0}</comment>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Benutzername</value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>Warnung</value>
+    <comment>warning</comment>
+  </data>
+  <data name="wordpress_link" xml:space="preserve">
+    <value>Wordpress link</value>
+    <comment>Wordpress link</comment>
+  </data>
+  <data name="close_settings" xml:space="preserve">
+    <value>Einstellungen schließen</value>
+    <comment>Close Settings</comment>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Beenden</value>
+    <comment>Exit</comment>
+  </data>
+  <data name="open_settings" xml:space="preserve">
+    <value>Einstellungen öffnen</value>
+    <comment>Open Settings</comment>
+  </data>
+  <data name="syncronize_changes" xml:space="preserve">
+    <value>Synchronisieren</value>
+    <comment>Synchronize Changes</comment>
+  </data>
+  <data name="umount_drive" xml:space="preserve">
+    <value>Laufwerk trennen</value>
+    <comment>Umount Wordpress Drive</comment>
+  </data>
+  <data name="Connection" xml:space="preserve">
+    <value>Verbindung</value>
+    <comment>Connection</comment>
+  </data>
+  <data name="connect_default_host" xml:space="preserve">
+    <value>Verbinden/Trennen Standardhost</value>
+    <comment>Connect/disconnect default Host</comment>
+  </data>
+  <data name="icon_mouse_actions" xml:space="preserve">
+    <value>Icon Mausaktionen:</value>
+    <comment>Icon Mouse Actions:</comment>
+  </data>
+  <data name="is_default_host" xml:space="preserve">
+    <value>Standardhost</value>
+    <comment>Is default Host</comment>
+  </data>
+  <data name="left_mb_click" xml:space="preserve">
+    <value>Linksklick</value>
+    <comment>Left click:</comment>
+  </data>
+  <data name="left_mb_dblclick" xml:space="preserve">
+    <value>Doppelklick links:</value>
+    <comment>Left dblclick:</comment>
+  </data>
+  <data name="not_connected" xml:space="preserve">
+    <value>getrennt</value>
+    <comment>not connected</comment>
+  </data>
+  <data name="open_popupmenu" xml:space="preserve">
+    <value>Menü anzeigen</value>
+    <comment>Open Popupmenu</comment>
+  </data>
+  <data name="right_mb_click" xml:space="preserve">
+    <value>Rechtsklick:</value>
+    <comment>Right click:</comment>
+  </data>
+  <data name="show_connect_msg" xml:space="preserve">
+    <value>Verbindungsnachricht anz.</value>
+    <comment>Show connect message</comment>
+  </data>
+  <data name="successfully_connect_msg" xml:space="preserve">
+    <value>Verbindung mit  '{0}' hergestellt</value>
+    <comment>Successfully connected with {0}</comment>
+  </data>
+  <data name="err_msg_network" xml:space="preserve">
+    <value>Netzwerkanfrage abgebrochen, Verbindungsfehler oder Server nicht erreichbar</value>
+    <comment>Request cancelled, network error or server not responding</comment>
+  </data>
+  <data name="err_unknow_server_error" xml:space="preserve">
+    <value>Es ist ein Serverfehler aufgetreten</value>
+    <comment>Unknown Server error</comment>
+  </data>
+  <data name="request_retries" xml:space="preserve">
+    <value>Max. Verbindungsversuche</value>
+    <comment>Request retries</comment>
+  </data>
+  <data name="request_timeout" xml:space="preserve">
+    <value>Timeout f. Abfrage</value>
+    <comment>Request timeout</comment>
+  </data>
+  <data name="allow_unsecure_ssl" xml:space="preserve">
+    <value>unsichere SSL Zert. erlauben</value>
+    <comment>Allow unsecure SSL certs</comment>
+  </data>
+  <data name="err_msg_ssl" xml:space="preserve">
+    <value>SSL Zertifikat konnte nicht validiert werden</value>
+    <comment>Error validating SSL certificate</comment>
+  </data>
+  <data name="Userinterface" xml:space="preserve">
+    <value>Benutzerobfläche</value>
+    <comment>User interface</comment>
+  </data>
+  <data name="task_close" xml:space="preserve">
+    <value>schliessen</value>
+    <comment>close</comment>
+  </data>
+  <data name="task_create" xml:space="preserve">
+    <value>anlegen</value>
+    <comment>create</comment>
+  </data>
+  <data name="task_delete" xml:space="preserve">
+    <value>löschen</value>
+    <comment>delete</comment>
+  </data>
+  <data name="task_modify" xml:space="preserve">
+    <value>ändern</value>
+    <comment>modify</comment>
+  </data>
+  <data name="task_rename" xml:space="preserve">
+    <value>umbenennen</value>
+    <comment>rename</comment>
+  </data>
+</root>

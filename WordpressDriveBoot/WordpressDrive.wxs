@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    <PackageGroup Id="WordpressDrive">
+        <MsiPackage
+        Id="Application"
+        Name="WordpressDrive"
+        SourceFile="$(var.WordpressDriveSetup.TargetDir)\WordpressDriveSetup.msi"
+        DisplayName="WordpressDrive"
+        DisplayInternalUI="no"
+        EnableFeatureSelection="no"
+        Visible="no"
+        Vital="yes" />
+    </PackageGroup>
+  </Fragment>
+</Wix>

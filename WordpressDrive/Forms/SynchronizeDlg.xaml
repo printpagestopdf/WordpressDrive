@@ -1,0 +1,97 @@
+﻿<Window x:Class="WordpressDrive.SynchronizeDlg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WordpressDrive"
+        xmlns:p="clr-namespace:WordpressDrive.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.Synchronize}" Height="260" Width="475" WindowStartupLocation="CenterScreen" Icon="/WordpressDrive;component/Resources/SystemTrayApp.ico">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/StylesDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <local:SyncTypeToStringConverter x:Key="SyncTypeToStringConverter"/>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo />
+    </Window.TaskbarItemInfo>
+    <DockPanel>
+        <Grid DockPanel.Dock="Bottom" HorizontalAlignment="Stretch" Margin="2,3,2,3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Style="{StaticResource CancelButton}" x:Name="btCancelSync" Click="BtCancelSync_Click" Content="{x:Static p:Resources.omit_synchronize}" />
+
+            <ProgressBar x:Name="pbSync" Grid.Column="1" Maximum="{Binding Path=[1]}" Value="{Binding Path=[0]}" HorizontalContentAlignment="Stretch" Background="White" Margin="0,8" Padding="0" ValueChanged="PbSync_ValueChanged"/>
+            <Button Grid.Column="2" Style="{StaticResource OkButton}" x:Name="btSync" Width="{Binding ElementName=btCancelSync,Path=ActualWidth}" Click="BtSync_Click"  Content="{x:Static p:Resources.do_synchronize}" /> 
+
+        </Grid>
+
+        <Grid DockPanel.Dock="Top" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="{x:Static p:Resources.Outstanding_synchronizations}" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFB0F0F" />
+            <ListView Grid.Row="1" x:Name="lvSyncList" SelectionMode="Single" >
+                <ListView.View>
+                    <GridView AllowsColumnReorder="False">
+                        <GridViewColumn Header="{x:Static p:Resources.select_sync_item}" Width="Auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate >
+                                    <StackPanel Orientation="Horizontal">
+                                        <CheckBox IsChecked="{Binding DoSync, Mode=TwoWay}" Name="cbSync"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="{x:Static p:Resources.state_sync_item}" Width="Auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate >
+                                    <StackPanel Orientation="Horizontal">
+                                        <!--<Image Source="/WordpressDrive;component/Resources/Checkmark_16x.png" Visibility="{Binding Done,Converter={StaticResource BooleanToVisibilityConverter}}"/>-->
+                                        <Image>
+                                            <Image.Style>
+                                                <Style TargetType="Image">
+                                                    <!--<Setter Property="Source" Value="/WordpressDrive;component/Resources/Checkmark_16x.png" />-->
+                                                    <Style.Triggers>
+                                                        <MultiDataTrigger>
+                                                            <MultiDataTrigger.Conditions>
+                                                                <Condition Binding="{Binding DoSync}" Value="True" />
+                                                                <Condition Binding="{Binding HasError}" Value="True" />
+                                                            </MultiDataTrigger.Conditions>
+                                                            <Setter Property="Source" Value="/WordpressDrive;component/Resources/Close_red_16x.png" />
+                                                        </MultiDataTrigger>
+                                                        <MultiDataTrigger>
+                                                            <MultiDataTrigger.Conditions>
+                                                                <Condition Binding="{Binding DoSync}" Value="True" />
+                                                                <Condition Binding="{Binding HasError}" Value="False" />
+                                                                <Condition Binding="{Binding Done}" Value="True" />
+                                                            </MultiDataTrigger.Conditions>
+                                                            <Setter Property="Source" Value="/WordpressDrive;component/Resources/Checkmark_16x.png" />
+                                                        </MultiDataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Type, Converter={StaticResource SyncTypeToStringConverter}}" Header="{x:Static p:Resources.task_sync_item}"  Width="Auto" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Node.WpObj.type}" Header="{x:Static p:Resources.type}" Width="Auto"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Node.FileName}" Header="{x:Static p:Resources.filename}" Width="Auto"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </DockPanel>
+</Window>
+    
+    

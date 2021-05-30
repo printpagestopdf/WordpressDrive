@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
+    <Fragment>
+    <PackageGroup Id="WinFsp">
+        <MsiPackage
+        Id="WinFsp"
+        Name="WinFsp"
+        SourceFile="external\winfsp-1.7.20172.msi"
+        DisplayName="WinFsp"
+        DisplayInternalUI="no"
+        EnableFeatureSelection="no"
+        Permanent="yes"
+        Vital="yes"
+        Visible="yes"/>     
+      <RollbackBoundary Vital="yes" />
+    </PackageGroup>
+  </Fragment>
+</Wix>
