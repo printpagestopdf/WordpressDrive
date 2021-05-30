@@ -1,3 +1,20 @@
+The WordpressDrive project is Copyright (C) The Ripper. 
+It is licensed under the terms of the GPLv3.
+
+The Software ist fully based on:
+"WinFsp - Windows File System Proxy,
+    Copyright (C) Bill Zissimopoulos"
+https://github.com/billziss-gh/winfsp
+
+In addition the following external libraries are used:
+⦁	"Hardcodet NotifyIcon for WPF" by Philipp Sumi and others
+https://github.com/hardcodet/wpf-notifyicon
+⦁	"Json.NET" by James Newton-King
+https://github.com/JamesNK/Newtonsoft.Json
+
+The full text of the GPLv3 license follows below.
+
+
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
