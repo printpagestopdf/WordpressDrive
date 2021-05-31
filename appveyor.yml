@@ -1,0 +1,16 @@
+version: 1.0.{build}
+
+image: Visual Studio 2017
+
+configuration: Debug
+
+platform: Any CPU
+
+before_build:
+- cmd: nuget restore
+build:
+  verbosity: minimal
+
+artifacts: 
+ - path: src\bin\$(configuration)
+   name: WordpressDrive
