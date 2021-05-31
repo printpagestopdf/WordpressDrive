@@ -7,6 +7,7 @@ configuration: Debug
 platform: Any CPU
 
 before_build:
+- start /wait msiexec /i WordpressDriveBoot\external\winfsp-1.7.20172.msi /qn ADDLOCAL=ALL
 - cmd: nuget restore
 build:
   verbosity: minimal
