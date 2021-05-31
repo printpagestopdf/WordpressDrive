@@ -14,4 +14,4 @@ build:
 
 artifacts: 
  - path: src\bin\$(configuration)
-   name: WordpressDrive
+   name: WordpressDrive.exe
