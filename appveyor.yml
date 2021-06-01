@@ -17,5 +17,5 @@ artifacts:
    name: WordpressDriveFiles
  - path: WordpressDriveSetup\bin\$(configuration)\WordpressDriveSetup.msi
    name: WordpressDriveSetup
- - path: WordpressDriveBoot\bin\$(platform)\WordpressDriveSetup.exe
+ - path: WordpressDriveBoot\bin\$(configuration)\WordpressDriveSetup.exe
    name: WordpressDriveFull
