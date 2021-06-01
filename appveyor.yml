@@ -13,5 +13,5 @@ build:
   verbosity: normal
 
 artifacts: 
- - path: src\bin\$(configuration)
+ - path: WordpressDrive\bin\$(configuration)
    name: WordpressDrive.exe
