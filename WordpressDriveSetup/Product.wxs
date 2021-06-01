@@ -1,5 +1,6 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"><?define WordpressDrive_TargetDir=$(var.WordpressDrive.TargetDir)?>
   <Product Id="*" Name="WordpressDrive" Language="1033" Version="0.5.0.0" Manufacturer="TheRipper" UpgradeCode="d1562c0b-ddc6-4912-97e0-a915d5fd2477">
+    
     <Package InstallerVersion="300" Compressed="yes" InstallScope="perMachine" />
     <Media Id="1" Cabinet="WordpressDrive.cab" EmbedCab="yes" />
     <MajorUpgrade DowngradeErrorMessage="A newer version of WordpressDrive is already installed." />
