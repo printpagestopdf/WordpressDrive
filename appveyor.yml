@@ -13,5 +13,9 @@ build:
   verbosity: normal
 
 artifacts: 
- - path: WordpressDrive\bin\$(configuration)
-   name: WordpressDrive.exe
+ - path: WordpressDrive\bin\$(platform)\$(configuration)
+   name: WordpressDriveFiles
+ - path: WordpressDriveSetup\bin\$(configuration)\WordpressDriveSetup.msi
+   name: WordpressDriveSetup
+ - path: WordpressDriveBoot\bin\$(platform)\WordpressDriveSetup.exe
+   name: WordpressDriveFull
