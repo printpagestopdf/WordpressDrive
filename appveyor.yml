@@ -4,7 +4,7 @@ image: Visual Studio 2017
 
 configuration: Debug
 
-platform: x64
+platform: x86
 
 before_build:
 - start /wait msiexec /i WordpressDriveBoot\external\winfsp-1.7.20172.msi /qn ADDLOCAL=ALL
