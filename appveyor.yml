@@ -30,7 +30,7 @@ for:
         - job_name: x86, Release
         
     artifacts: 
-      - path: WordpressDrive\bin\$(platform)\$(configuration)
+      - path: WordpressDrive\bin\$(configuration)
         name: WordpressDriveFiles
       - path: WordpressDriveSetup\bin\$(configuration)\WordpressDriveSetup.msi
         name: WordpressDriveSetup
