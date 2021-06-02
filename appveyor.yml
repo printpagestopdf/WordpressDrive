@@ -30,14 +30,17 @@ environment:
 before_build:
 - start /wait msiexec /i WordpressDriveBoot\external\winfsp-1.7.20172.msi /qn ADDLOCAL=ALL
 - cmd: nuget restore
-build:
-  verbosity: normal
+#build:
+#  verbosity: normal
 
 for:
   -
     matrix:
       only:
         - job_name: x86, Release
+    
+    build:
+      verbosity: normal
         
     artifacts: 
       - path: WordpressDrive\bin\$(configuration)
@@ -50,7 +53,10 @@ for:
     matrix:
       only:
         - job_name: x64, Release
-        
+    
+    build:
+      verbosity: normal
+         
     artifacts: 
       - path: WordpressDrive\bin\$(platform)\$(configuration)
         name: WordpressDriveFiles_x64
