@@ -18,17 +18,17 @@ build:
 
 artifacts: 
   - path: WordpressDrive\bin\$(configuration)
-    name: WordpressDriveFiles
+    name: WordpressDriveFiles.zip
   - path: WordpressDriveSetup\bin\$(configuration)\WordpressDriveSetup.msi
-    name: WordpressDriveSetup
+    name: WordpressDriveSetup.msi
   - path: WordpressDriveBoot\bin\$(configuration)\WordpressDriveSetup.exe
-    name: WordpressDriveFull
+    name: WordpressDriveFull.exe
   - path: WordpressDrive\bin\$(platform)\$(configuration)
-    name: WordpressDriveFiles_x64
+    name: WordpressDriveFiles_x64.zip
   - path: WordpressDriveSetup\bin\$(platform)\$(configuration)\WordpressDriveSetup.msi
-    name: WordpressDriveSetup_x64
+    name: WordpressDriveSetup_x64.msi
   - path: WordpressDriveBoot\bin\$(platform)\$(configuration)\WordpressDriveSetup.exe
-    name: WordpressDriveFull_x64
+    name: WordpressDriveFull_x64.exe
 
 deploy:
   release: WordpressDrive-v$(APPVEYOR_BUILD_VERSION)
@@ -36,7 +36,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: UYCMPPzbi/a4gZvxr5fNEY7yzHzOVMcEEjBgClu8WRZXiS15RHConewJjKqIdULE
-  artifact: WordpressDriveFiles,WordpressDriveSetup,WordpressDriveFull,WordpressDriveFiles_x64,WordpressDriveSetup_x64,WordpressDriveFull_x64
+  artifact: WordpressDriveFiles.zip,WordpressDriveSetup.msi,WordpressDriveFull.exe,WordpressDriveFiles_x64.zip,WordpressDriveSetup_x64.msi,WordpressDriveFull_x64.exe
   draft: true
   prerelease: true
   on:
