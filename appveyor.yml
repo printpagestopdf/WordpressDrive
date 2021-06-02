@@ -8,14 +8,24 @@ image: Visual Studio 2017
 
 environment:
   matrix:
+  
+  - job_name: Build
 
   - job_name: x86, Release
     platform: x86
     configuration: Release
+    job_group: PlattformBuild
+    job_depends_on: Build
 
   - job_name: x64, Release
     platform: x64
     configuration: Release
+    job_group: PlattformBuild
+    job_depends_on: Build
+    
+  - job_name: Deploy
+    job_depends_on: PlattformBuild
+   
     
 before_build:
 - start /wait msiexec /i WordpressDriveBoot\external\winfsp-1.7.20172.msi /qn ADDLOCAL=ALL
@@ -48,6 +58,25 @@ for:
         name: WordpressDriveSetup_x64
       - path: WordpressDriveBoot\bin\$(platform)\$(configuration)\WordpressDriveSetup.exe
         name: WordpressDriveFull_x64
+  -
+    matrix:
+      only:
+        - job_name: Deploy
+        
+    deploy:
+      release: WordpressDrive-v$(APPVEYOR_BUILD_VERSION)
+      description: 'Prerelease'
+      provider: GitHub
+      auth_token:
+        secure: UYCMPPzbi/a4gZvxr5fNEY7yzHzOVMcEEjBgClu8WRZXiS15RHConewJjKqIdULE
+      artifact: WordpressDriveFiles,WordpressDriveSetup,WordpressDriveFull,WordpressDriveFiles_x64,WordpressDriveSetup_x64,WordpressDriveFull_x64
+      draft: true
+      prerelease: true
+      on:
+        branch: main                 # release from master branch only
+        APPVEYOR_REPO_TAG: true        # deploy on tag push only
+
+
 
 #artifacts: 
 # - path: WordpressDrive\bin\$(platform)\$(configuration)
@@ -57,15 +86,15 @@ for:
 # - path: WordpressDriveBoot\bin\$(configuration)\WordpressDriveSetup.exe
 #   name: WordpressDriveFull
 
-deploy:
-  release: WordpressDrive-v$(APPVEYOR_BUILD_VERSION)
-  description: 'Prerelease'
-  provider: GitHub
-  auth_token:
-    secure: UYCMPPzbi/a4gZvxr5fNEY7yzHzOVMcEEjBgClu8WRZXiS15RHConewJjKqIdULE
-  artifact: WordpressDriveFiles,WordpressDriveSetup,WordpressDriveFull          # upload all NuGet packages to release assets
-  draft: false
-  prerelease: false
-  on:
-    branch: main                 # release from master branch only
-    APPVEYOR_REPO_TAG: true        # deploy on tag push only
+#deploy:
+#  release: WordpressDrive-v$(APPVEYOR_BUILD_VERSION)
+#  description: 'Prerelease'
+#  provider: GitHub
+#  auth_token:
+#    secure: UYCMPPzbi/a4gZvxr5fNEY7yzHzOVMcEEjBgClu8WRZXiS15RHConewJjKqIdULE
+#  artifact: WordpressDriveFiles,WordpressDriveSetup,WordpressDriveFull          # upload all NuGet packages to release assets
+#  draft: false
+#  prerelease: false
+#  on:
+#    branch: main                 # release from master branch only
+#    APPVEYOR_REPO_TAG: true        # deploy on tag push only
