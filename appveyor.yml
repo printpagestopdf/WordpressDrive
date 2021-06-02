@@ -78,7 +78,22 @@ for:
         - job_name: Deploy
     
     build: off
-        
+
+    artifacts: 
+      - path: WordpressDrive\bin\$(platform)\$(configuration)
+        name: WordpressDriveFiles_x64
+      - path: WordpressDriveSetup\bin\$(platform)\$(configuration)\WordpressDriveSetup.msi
+        name: WordpressDriveSetup_x64
+      - path: WordpressDriveBoot\bin\$(platform)\$(configuration)\WordpressDriveSetup.exe
+        name: WordpressDriveFull_x64
+      - path: WordpressDrive\bin\$(configuration)
+        name: WordpressDriveFiles
+      - path: WordpressDriveSetup\bin\$(configuration)\WordpressDriveSetup.msi
+        name: WordpressDriveSetup
+      - path: WordpressDriveBoot\bin\$(configuration)\WordpressDriveSetup.exe
+        name: WordpressDriveFull
+
+
     deploy:
       release: WordpressDrive-v$(APPVEYOR_BUILD_VERSION)
       description: 'Prerelease'
