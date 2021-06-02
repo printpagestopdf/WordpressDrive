@@ -9,13 +9,13 @@ image: Visual Studio 2017
 environment:
   matrix:
 
-  - job_name: x86, Debug
+  - job_name: x86, Release
     platform: x86
-    configuration: Debug
+    configuration: Release
 
-  - job_name: x64, Debug
+  - job_name: x64, Release
     platform: x64
-    configuration: Debug
+    configuration: Release
     
 before_build:
 - start /wait msiexec /i WordpressDriveBoot\external\winfsp-1.7.20172.msi /qn ADDLOCAL=ALL
@@ -23,13 +23,39 @@ before_build:
 build:
   verbosity: normal
 
-artifacts: 
- - path: WordpressDrive\bin\$(platform)\$(configuration)
-   name: WordpressDriveFiles
- - path: WordpressDriveSetup\bin\$(configuration)\WordpressDriveSetup.msi
-   name: WordpressDriveSetup
- - path: WordpressDriveBoot\bin\$(configuration)\WordpressDriveSetup.exe
-   name: WordpressDriveFull
+for:
+  -
+    matrix:
+      only:
+        - job_name: x86, Release
+        
+    artifacts: 
+      - path: WordpressDrive\bin\$(platform)\$(configuration)
+        name: WordpressDriveFiles
+      - path: WordpressDriveSetup\bin\$(configuration)\WordpressDriveSetup.msi
+        name: WordpressDriveSetup
+      - path: WordpressDriveBoot\bin\$(configuration)\WordpressDriveSetup.exe
+        name: WordpressDriveFull
+  -
+    matrix:
+      only:
+        - job_name: x64, Release
+        
+    artifacts: 
+      - path: WordpressDrive\bin\$(platform)\$(configuration)
+        name: WordpressDriveFiles_x64
+      - path: WordpressDriveSetup\bin\$(platform)\$(configuration)\WordpressDriveSetup.msi
+        name: WordpressDriveSetup_x64
+      - path: WordpressDriveBoot\bin\$(platform)\$(configuration)\WordpressDriveSetup.exe
+        name: WordpressDriveFull_x64
+
+#artifacts: 
+# - path: WordpressDrive\bin\$(platform)\$(configuration)
+#   name: WordpressDriveFiles
+# - path: WordpressDriveSetup\bin\$(configuration)\WordpressDriveSetup.msi
+#   name: WordpressDriveSetup
+# - path: WordpressDriveBoot\bin\$(configuration)\WordpressDriveSetup.exe
+#   name: WordpressDriveFull
 
 deploy:
   release: WordpressDrive-v$(APPVEYOR_BUILD_VERSION)
