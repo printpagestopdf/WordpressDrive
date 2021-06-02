@@ -37,10 +37,17 @@ for:
   -
     matrix:
       only:
+        - job_name: Build
+    
+    build: off
+  -
+    matrix:
+      only:
         - job_name: x86, Release
     
     build:
       verbosity: normal
+      parallel: true
         
     artifacts: 
       - path: WordpressDrive\bin\$(configuration)
@@ -56,6 +63,7 @@ for:
     
     build:
       verbosity: normal
+      parallel: true
          
     artifacts: 
       - path: WordpressDrive\bin\$(platform)\$(configuration)
@@ -68,6 +76,8 @@ for:
     matrix:
       only:
         - job_name: Deploy
+    
+    build: off
         
     deploy:
       release: WordpressDrive-v$(APPVEYOR_BUILD_VERSION)
