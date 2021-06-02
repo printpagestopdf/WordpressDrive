@@ -2,10 +2,21 @@ version: 1.0.{build}
 
 image: Visual Studio 2017
 
-configuration: Debug
+#configuration: Debug
 
-platform: x64
+#platform: x64
 
+environment:
+  matrix:
+
+  - job_name: x86, Debug
+    platform: x86
+    configuration: Debug
+
+  - job_name: x64, Debug
+    platform: x64
+    configuration: Debug
+    
 before_build:
 - start /wait msiexec /i WordpressDriveBoot\external\winfsp-1.7.20172.msi /qn ADDLOCAL=ALL
 - cmd: nuget restore
