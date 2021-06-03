@@ -33,11 +33,14 @@ artifacts:
 after_build:
 - ps: >-
     $fileToCheck = 'WordpressDriveSetup\bin\x64\Release\WordpressDriveSetup.msi'
+    
     if (Test-Path $fileToCheck -PathType leaf)
     {
         appveyor PushArtifact WordpressDriveSetup\bin\x64\Release\WordpressDriveSetup.msi -FileName WordpressDriveSetup\bin\x64\Release\WordpressDriveSetup_x64.msi
     }
+    
     $fileToCheck = 'WordpressDriveBoot\bin\x64\Release\WordpressDriveSetup.exe'
+    
     if (Test-Path $fileToCheck -PathType leaf)
     {
         appveyor PushArtifact WordpressDriveBoot\bin\x64\Release\WordpressDriveSetup.exe -FileName WordpressDriveBoot\bin\x64\Release\WordpressDriveSetup_64.exe
