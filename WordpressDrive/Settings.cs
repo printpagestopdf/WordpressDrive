@@ -52,7 +52,7 @@ namespace WordpressDrive
             _HostsSettings.CollectionChanged += _HostsSettings_CollectionChanged;
         }
 
-        private void _HostsSettings_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        public void _HostsSettings_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
            
             (App.Current as WordpressDrive.App).UpdateMenu();
@@ -79,6 +79,7 @@ namespace WordpressDrive
                 set {
                     _DisplayName = value;
                     System.Windows.Data.CollectionViewSource.GetDefaultView(Settings.Instance.HostsSettings).Refresh();
+                    Settings.Instance._HostsSettings_CollectionChanged(null, null);
                 }
             }
             public string HostUrl { get; set; }
