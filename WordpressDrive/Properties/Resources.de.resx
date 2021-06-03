@@ -415,4 +415,8 @@
     <value>umbenennen</value>
     <comment>rename</comment>
   </data>
+  <data name="About" xml:space="preserve">
+    <value>Über..</value>
+    <comment>About</comment>
+  </data>
 </root>

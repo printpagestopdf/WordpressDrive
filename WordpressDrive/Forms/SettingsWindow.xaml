@@ -270,6 +270,55 @@
                     </TabControl>
                 </TabItem.Content>
             </TabItem>
+            <TabItem >
+                <TabItem.Header>
+                    <Label Content="{x:Static p:Resources.About}" />
+                </TabItem.Header>
+
+                <TabItem.Content>
+                    <StackPanel >
+                        <Label Content="{Binding Version, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SettingsWindow}}}" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" />
+
+                        <TextBlock FontSize="14" Margin="30,27,0,0">
+                            The WordpressDrive project is Copyright (C) The Ripper.
+                            <LineBreak/>
+                            It is licensed under the terms of the GPLv3.
+                            <LineBreak/>
+                            <Hyperlink NavigateUri="https://github.com/printpagestopdf/WordpressDrive" TargetName="https://github.com/printpagestopdf/WordpressDrive" >
+                            Wordpress Drive on GitHub    
+                            </Hyperlink>
+                            <LineBreak/>
+                            <LineBreak/>
+                            The Software ist fully based on:
+                            <LineBreak/>
+                            "WinFsp - Windows File System Proxy,
+                            <LineBreak/>
+                            Copyright (C) Bill Zissimopoulos'
+                            <LineBreak/>
+                            <Hyperlink NavigateUri="https://github.com/billziss-gh/winfsp" >
+                            https://github.com/billziss-gh/winfsp    
+                            </Hyperlink>
+                            <LineBreak/>
+                            <LineBreak/>
+                            The following external libraries are used:
+                            <LineBreak/>
+                            ⦁	"Hardcodet NotifyIcon for WPF" by Philipp Sumi and others
+                            <LineBreak/>
+                            <Hyperlink NavigateUri="https://github.com/hardcodet/wpf-notifyicon" >
+                            https://github.com/hardcodet/wpf-notifyicon    
+                            </Hyperlink>                             
+                            <LineBreak/>
+                            ⦁	"Json.NET" by James Newton-King
+                            <LineBreak/>
+                            <Hyperlink NavigateUri="https://github.com/JamesNK/Newtonsoft.Json" >
+                            https://github.com/JamesNK/Newtonsoft.Json    
+                            </Hyperlink>
+                             
+
+                        </TextBlock>
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
 
         </TabControl>
     </DockPanel>

@@ -61,6 +61,15 @@ namespace WordpressDrive.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die About ähnelt.
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Allow unsecure SSL certs ähnelt.
         /// </summary>
         public static string allow_unsecure_ssl {

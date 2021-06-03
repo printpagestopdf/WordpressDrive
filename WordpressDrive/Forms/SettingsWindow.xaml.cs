@@ -38,6 +38,22 @@ namespace WordpressDrive
 
         }
 
+        private string _Version;
+
+        public string Version
+        {
+            get {
+                if (string.IsNullOrWhiteSpace(_Version))
+                {
+                    System.Reflection.AssemblyName assemblyName = System.Reflection.Assembly.GetExecutingAssembly().GetName();
+                    _Version = $"{assemblyName.Name} ({assemblyName.Version.ToString()})";
+                }
+                return _Version;
+            }
+            
+        }
+
+
         private void Window_Closed(object sender, EventArgs e)
         {           
             Settings.SaveSettings();

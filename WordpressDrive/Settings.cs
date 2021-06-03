@@ -210,11 +210,17 @@ namespace WordpressDrive
             }
 
 
-            private string _currentLangCode = "en";
+            private string _currentLangCode;
             public string CurrentLangCode
             {
                 get { return _currentLangCode; }
                 set {
+                    if(string.IsNullOrEmpty(value))
+                    {
+                        _currentLangCode = value;
+                        return;
+                    }
+
                     CultureInfo ci = new CultureInfo(value);
                     if (!ci.Equals(Properties.Resources.Culture))
                         Properties.Resources.Culture = ci;
@@ -225,7 +231,11 @@ namespace WordpressDrive
             [JsonIgnore]
             public CultureInfo CurrentCultureInfo
             {
-                get { return new CultureInfo(_currentLangCode); }
+                get {
+                    if(string.IsNullOrEmpty(_currentLangCode))
+                        return CultureInfo.CurrentUICulture;
+                    else
+                        return new CultureInfo(_currentLangCode); }
                 set { CurrentLangCode = value.Name; }
             }
 

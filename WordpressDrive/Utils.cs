@@ -457,7 +457,7 @@ namespace WordpressDrive
         public static IEnumerable<CultureInfo> GetAvailableCultures()
         {
             List<CultureInfo> result = new List<CultureInfo>(){
-                new CultureInfo("en"), //english is default, so add it manually
+                //new CultureInfo("en"), //english is default, so add it manually
             };
             
             ResourceManager rm = new ResourceManager(typeof(Properties.Resources));
