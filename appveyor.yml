@@ -25,14 +25,14 @@ artifacts:
     name: WordpressDriveFull.exe
   - path: WordpressDrive\bin\$(platform)\$(configuration)
     name: WordpressDriveFiles_x64
-  - path: WordpressDriveSetup\bin\$(platform)\$(configuration)\WordpressDriveSetup_64.msi
-    name: WordpressDriveSetup_x64.msi
-  - path: WordpressDriveBoot\bin\$(platform)\$(configuration)\WordpressDriveSetup_64.exe
-    name: WordpressDriveFull_x64.exe
+#  - path: WordpressDriveSetup\bin\$(platform)\$(configuration)\WordpressDriveSetup_64.msi
+#    name: WordpressDriveSetup_x64.msi
+#  - path: WordpressDriveBoot\bin\$(platform)\$(configuration)\WordpressDriveSetup_64.exe
+#    name: WordpressDriveFull_x64.exe
     
 after_build:
-- appveyor PushArtifact WordpressDriveSetup\bin\x64\Release\WordpressDriveSetup.msi -FileName WordpressDriveSetup_x64.msi
-- appveyor PushArtifact WordpressDriveBoot\bin\x64\Release\WordpressDriveSetup.exe -FileName WordpressDriveSetup_64.exe
+- appveyor PushArtifact WordpressDriveSetup\bin\x64\Release\WordpressDriveSetup.msi -FileName WordpressDriveSetup\bin\x64\Release\WordpressDriveSetup_x64.msi
+- appveyor PushArtifact WordpressDriveBoot\bin\x64\Release\WordpressDriveSetup.exe -FileName WordpressDriveBoot\bin\x64\Release\WordpressDriveSetup_64.exe
 
 deploy:
   release: WordpressDrive-v$(APPVEYOR_BUILD_VERSION)
@@ -40,7 +40,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: UYCMPPzbi/a4gZvxr5fNEY7yzHzOVMcEEjBgClu8WRZXiS15RHConewJjKqIdULE
-  artifact: WordpressDriveFiles,WordpressDriveSetup.msi,WordpressDriveFull.exe,WordpressDriveFiles_x64,WordpressDriveSetup_x64.msi,WordpressDriveFull_x64.exe
+  artifact: WordpressDriveFiles,WordpressDriveSetup.msi,WordpressDriveFull.exe,WordpressDriveFiles_x64,WordpressDriveSetup\bin\x64\Release\WordpressDriveSetup_x64.msi,WordpressDriveBoot\bin\x64\Release\WordpressDriveSetup_64.exe
   draft: true
   prerelease: true
   on:
