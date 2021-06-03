@@ -32,7 +32,7 @@ artifacts:
     
 after_build:
 - appveyor PushArtifact WordpressDriveSetup\bin\x64\Release\WordpressDriveSetup.msi -FileName WordpressDriveSetup_x64.msi
-- appveyor PushArtifact WordpressDriveBoot\bin\x64\Release\WordpressDriveSetup.exe -FileName Release\WordpressDriveSetup_64.exe
+- appveyor PushArtifact WordpressDriveBoot\bin\x64\Release\WordpressDriveSetup.exe -FileName WordpressDriveSetup_64.exe
 
 deploy:
   release: WordpressDrive-v$(APPVEYOR_BUILD_VERSION)
