@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 using System.IO;
+using System.Diagnostics;
 
 
 namespace WordpressDrive
@@ -126,6 +127,13 @@ namespace WordpressDrive
                 System.Diagnostics.Process.Start(cacheDir);
             else
                 Utils.Notify(Properties.Resources.directory_not_exist);
+
+        }
+
+        private void On_click_hyperlink(object sender, RoutedEventArgs e)
+        {
+            Hyperlink link = (Hyperlink)e.OriginalSource;
+            Process.Start(new ProcessStartInfo(link.NavigateUri.AbsoluteUri));
 
         }
     }

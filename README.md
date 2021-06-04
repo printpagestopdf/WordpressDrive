@@ -8,6 +8,11 @@ Posts and Pages are organized in Folders as HTML Files. Media File types are rep
 
 The Application starts as a taskbar icon, all user interaction can be started from there. Working with Wordpress data happens with the standard Windows tools (Explorer, CMD, ...).
 
+## Usage
+You can start WordpressDrive from the Startmenu (or put it into autostart).  
+
+![](assets/StartupMenu.png"Logo Title Text 1")
+
 ## Installation
 Download the latest Release from [here](https://github.com/printpagestopdf/WordpressDrive/releases/latest).
 

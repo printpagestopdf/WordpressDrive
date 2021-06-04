@@ -39,8 +39,17 @@ namespace WordpressDrive
             _notifyIcon = (TaskbarIcon)FindResource("NotifyIcon");
             BuildMenu();
 
+            CheckHostslist();
         }
 
+        protected void CheckHostslist()
+        {
+            if(Settings.Instance.HostsSettings.Count == 0)
+            {
+                Application.Current.MainWindow = new SettingsWindow();
+                Application.Current.MainWindow.Show();
+            }
+        }
 
         protected void BuildMenu()
         {

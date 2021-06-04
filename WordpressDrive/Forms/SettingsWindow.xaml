@@ -284,7 +284,7 @@
                             <LineBreak/>
                             It is licensed under the terms of the GPLv3.
                             <LineBreak/>
-                            <Hyperlink NavigateUri="https://github.com/printpagestopdf/WordpressDrive" TargetName="https://github.com/printpagestopdf/WordpressDrive" >
+                            <Hyperlink NavigateUri="https://github.com/printpagestopdf/WordpressDrive" TargetName="https://github.com/printpagestopdf/WordpressDrive" Click="On_click_hyperlink" >
                             Wordpress Drive on GitHub    
                             </Hyperlink>
                             <LineBreak/>
@@ -295,7 +295,7 @@
                             <LineBreak/>
                             Copyright (C) Bill Zissimopoulos'
                             <LineBreak/>
-                            <Hyperlink NavigateUri="https://github.com/billziss-gh/winfsp" >
+                            <Hyperlink NavigateUri="https://github.com/billziss-gh/winfsp"  Click="On_click_hyperlink" >
                             https://github.com/billziss-gh/winfsp    
                             </Hyperlink>
                             <LineBreak/>
@@ -304,13 +304,13 @@
                             <LineBreak/>
                             ⦁	"Hardcodet NotifyIcon for WPF" by Philipp Sumi and others
                             <LineBreak/>
-                            <Hyperlink NavigateUri="https://github.com/hardcodet/wpf-notifyicon" >
+                            <Hyperlink NavigateUri="https://github.com/hardcodet/wpf-notifyicon"   Click="On_click_hyperlink">
                             https://github.com/hardcodet/wpf-notifyicon    
                             </Hyperlink>                             
                             <LineBreak/>
                             ⦁	"Json.NET" by James Newton-King
                             <LineBreak/>
-                            <Hyperlink NavigateUri="https://github.com/JamesNK/Newtonsoft.Json" >
+                            <Hyperlink NavigateUri="https://github.com/JamesNK/Newtonsoft.Json"  Click="On_click_hyperlink">
                             https://github.com/JamesNK/Newtonsoft.Json    
                             </Hyperlink>
                              
