@@ -10,3 +10,19 @@ The Application starts as a taskbar icon, all user interaction can be started fr
 
 ## Installation
 Download the latest Release from [here](https://github.com/printpagestopdf/WordpressDrive/releases/latest).
+
+Choose the appropriate one from the artifacts:  
+
+
+**WordpressDriveSetup.exe:**  
+Installer of WordpressDrive including WinFsp (best to use if not already installed WinFsp)
+
+**WordpressDriveSetup.msi:**  
+Installer of WordpressDrive (needs WinFsp installed)
+
+**WordpressDriveFiles.zip:**  
+Application Files without installer
+
+Files ending with _x64 are usable for 64 bit Platforms only.
+Files without the trailing _x64 can be used on 32 and 64 bit Plattforms.
+
