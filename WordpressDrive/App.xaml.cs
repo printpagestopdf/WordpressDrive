@@ -68,13 +68,14 @@ namespace WordpressDrive
 
         public void UpdateMenu()
         {
-            if (_notifyIcon == null) return;
+            if (_notifyIcon == null ||
+                !_notifyIcon.Dispatcher.Thread.Equals(System.Threading.Thread.CurrentThread)) return;
 
-            for(int i=_notifyIcon.ContextMenu.Items.Count - 1; i>=0; i--)
+            for (int i = _notifyIcon.ContextMenu.Items.Count - 1; i >= 0; i--)
             {
                 if (!(_notifyIcon.ContextMenu.Items[i] is System.Windows.Controls.MenuItem)) continue;
                 System.Windows.Controls.MenuItem mi = _notifyIcon.ContextMenu.Items[i] as System.Windows.Controls.MenuItem;
-                if (mi.CommandParameter !=null && (mi.CommandParameter is Settings.HostSettings))
+                if (mi.CommandParameter != null && (mi.CommandParameter is Settings.HostSettings))
                     _notifyIcon.ContextMenu.Items.RemoveAt(i);
             }
 
