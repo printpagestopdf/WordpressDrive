@@ -10,6 +10,25 @@ The Application starts as a taskbar icon, all user interaction can be started fr
 
 Based on **WinFSP by Bill Zissimopoulos** [https://github.com/billziss-gh/winfsp](https://github.com/billziss-gh/winfsp)<br/>
 
+## Installation
+Download the latest Release from [here](https://github.com/printpagestopdf/WordpressDrive/releases/latest).
+
+Choose the appropriate one from the artifacts:  
+
+
+**WordpressDriveSetup.exe:**  
+Installer of WordpressDrive including WinFsp (best to use if not already installed WinFsp)
+
+**WordpressDriveSetup.msi:**  
+Installer of WordpressDrive (needs WinFsp installed)
+
+**WordpressDriveFiles.zip:**  
+Application Files without installer
+
+Files ending with _x64 are usable for 64 bit Platforms only.
+Files without the trailing _x64 can be used on 32 and 64 bit Plattforms.
+
+
 ## Usage
 You can start WordpressDrive from the Startmenu (or put it into autostart).  
 
@@ -33,21 +52,20 @@ If you want to work with the connected Wordpress host open e.g. the windows file
 ![Screenshot](assets/FileExplorer.png)   
   
 
-## Installation
-Download the latest Release from [here](https://github.com/printpagestopdf/WordpressDrive/releases/latest).
+## Wordpress Plugin
+There is a Wordpress Plugin that enhances the capabilities of WordpressDrive.   
+Even though WordpressDrive **works well without this plugin**, it extends its capabilities.
 
-Choose the appropriate one from the artifacts:  
+If installed on a Wordpress site WordpressDrive is able to use these additional features:
 
+* getting (file) size information
+* populating custom post types to WordpressDrive (REST API)
+* **replacing/modifying media files**
+* restrict media file modification by role and capability
 
-**WordpressDriveSetup.exe:**  
-Installer of WordpressDrive including WinFsp (best to use if not already installed WinFsp)
+You can install the plugin from the official Wordpress Plugin site:  
+[https://wordpress.org/plugins/drive-wp/](https://wordpress.org/plugins/drive-wp/)
 
-**WordpressDriveSetup.msi:**  
-Installer of WordpressDrive (needs WinFsp installed)
+You will find the source code in this repo below the folder WpPlugin. 
 
-**WordpressDriveFiles.zip:**  
-Application Files without installer
-
-Files ending with _x64 are usable for 64 bit Platforms only.
-Files without the trailing _x64 can be used on 32 and 64 bit Plattforms.
 

@@ -1,0 +1,47 @@
+# Plugin Wordpress Drive for Windows.
+# Copyright (C) 2021
+# This file is distributed under the same license as the PACKAGE Wordpress Drive for Windows.
+# The Ripper <printpagestopdf@yahoo.de>, 2021.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Wordpress Drive for Windows\n"
+"Report-Msgid-Bugs-To: The Ripper <printpagestopdf@yahoo.de>\n"
+"POT-Creation-Date: 2021-06-06 15:47+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: The Ripper <printpagestopdf@yahoo.de>\n"
+"Language-Team: wp-drive\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: admin-ui.php:79
+msgid "Restrict modify media"
+msgstr ""
+
+#: admin-ui.php:87
+msgid "Select custom post types that are populated to WordpressDrive/REST API"
+msgstr ""
+
+#: admin-ui.php:167
+msgid "Already populated post types (by system)"
+msgstr ""
+
+#: admin-ui.php:180
+msgid ""
+"If this checkbox is selected, the ability to modify media files by "
+"WordpressDrive is only allowed to users, which have the Role <b>'Modify "
+"Media'</b> (modifymedia) and/or the capability <b>'modify_media'</b> enabled."
+msgstr ""
+
+msgid ""
+"Enhances the capabilities of the Windows Application \"WordpressDrive\" by "
+"adding content size Information, ability to modify media files and to "
+"populate custom post types to REST API."
+msgstr ""
+
+msgid "Wp Drive"
+msgstr ""

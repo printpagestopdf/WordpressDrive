@@ -1,0 +1,59 @@
+# Translation of
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wordpress Drive for Windows\n"
+"Report-Msgid-Bugs-To: printpagestopdf@yahoo.de\n"
+"POT-Creation-Date: yyyy-mm-dd hh:mm+0000\n"
+"PO-Revision-Date: 2021-06-06 15:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: Deutsch\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.2; wp-5.6.1"
+
+#: admin-ui.php:167
+msgid "Already populated post types (by system)"
+msgstr "Bereits durch das System bereitgestellte post types"
+
+#, fuzzy
+#| msgid ""
+#| "Enhances the capabilities of the Windows Application \"Wordpress Drive\" "
+#| "by adding content size Information, ability to modify media files and to "
+#| "populate custom post types to REST API."
+msgid ""
+"Enhances the capabilities of the Windows Application \"WordpressDrive\" by "
+"adding content size Information, ability to modify media files and to "
+"populate custom post types to REST API."
+msgstr ""
+"Erweitert die Möglichkeiten der Windows Anwendung \"WordpressDrive\" um "
+"Grösseninformationen für Posts, die Möglichkeit Media Dateien zu ändern und "
+"weitere post types in WordpressDrive/REST API sichtbar zu machen."
+
+#: admin-ui.php:180
+msgid ""
+"If this checkbox is selected, the ability to modify media files by "
+"WordpressDrive is only allowed to users, which have the Role <b>'Modify "
+"Media'</b> (modifymedia) and/or the capability <b>'modify_media'</b> enabled."
+msgstr ""
+"Anwählen dieser checkbox erlaubt nur Benutzern mit der Rolle <b>'Modify "
+"Media'</b> (modifymedia) und/oder der Capability <b>'modify_media'</b> Media "
+"Dateien zu ändern."
+
+#: admin-ui.php:79
+msgid "Restrict modify media"
+msgstr "Bearbeiten von Medien einschränken"
+
+#: admin-ui.php:87
+msgid "Select custom post types that are populated to WordpressDrive/REST API"
+msgstr ""
+"Post types auswählen, die für WordpressDrive/REST API verfügbar sein sollen"
+
+msgid "Wp Drive"
+msgstr "Wp Drive"
