@@ -10,6 +10,13 @@ The Application starts as a taskbar icon, all user interaction can be started fr
 
 Based on **WinFSP by Bill Zissimopoulos** [https://github.com/billziss-gh/winfsp](https://github.com/billziss-gh/winfsp)<br/>
 
+## Use Cases
+* If Wordpress content (probably mainly Media files) should be used on Windows it can directly opened from the Drive, or copied e.g. by drag&drop to other locations
+* Content (Media files ) can easily added to wordpress by copy or drag&drop to the Drive
+* If the Plugin is used on the site Media files can directly edited from the Drive without using the Wordpress UI
+* Content can be edited with an arbitrary Editor without the modifications of the Wordpress Editor.
+* ...
+
 ## Installation
 Download the latest Release from [here](https://github.com/printpagestopdf/WordpressDrive/releases/latest).
 
