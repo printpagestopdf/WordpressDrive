@@ -2,7 +2,7 @@
 Contributors: theripper
 Tags: windows drive, rest api, change attachment file
 Requires at least: 4.7
-Tested up to: 5.7
+Tested up to: 6.0
 Requires PHP: 5.4
 Stable tag: 0.5.0
 License: GPLv3 or later
