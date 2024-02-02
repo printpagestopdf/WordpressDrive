@@ -146,9 +146,12 @@ class WpDriveUI {
 	
 	public function post_types_select_callback() {
 		$rest_post_types=get_post_types(array("show_in_rest" => true),'objects');
-		$rest_post_types=array_filter($rest_post_types,function($post_type) {
-			return !in_array($post_type->name, $this->wordpress_drive_options['post_types_select']);
-		});
+		
+		if(!empty($this->wordpress_drive_options['post_types_select']) && is_array($this->wordpress_drive_options['post_types_select'])) {
+			$rest_post_types=array_filter($rest_post_types,function($post_type) {
+				return !in_array($post_type->name, $this->wordpress_drive_options['post_types_select']);
+			});
+		}
 		
 		$post_types=get_post_types(array( "_builtin" => false),'objects');
 
@@ -156,13 +159,15 @@ class WpDriveUI {
 			return !in_array($post_type,$rest_post_types);
 		});
 		
-		?> <select name="wordpress_drive_option_name[post_types_select][]" id="post_types_select" size="<?php echo count($post_types) ?>" style="height: 100%; padding-bottom: 0.5em; padding-top: 0.5em;" multiple> <?php
-		foreach($post_types as $post_type)
-		{
-			$selected=(isset( $this->wordpress_drive_options['post_types_select'] ) && in_array($post_type->name, $this->wordpress_drive_options['post_types_select'])) ? 'selected' : '' ;
-			echo "<option {$selected} value='{$post_type->name}'>{$post_type->label}</option>";
+		if(!empty($post_types)) {
+			?> <select name="wordpress_drive_option_name[post_types_select][]" id="post_types_select" size="<?php echo count($post_types) ?>" style="height: 100%; padding-bottom: 0.5em; padding-top: 0.5em;" multiple> <?php
+			foreach($post_types as $post_type)
+			{
+				$selected=(isset( $this->wordpress_drive_options['post_types_select'] ) && in_array($post_type->name, $this->wordpress_drive_options['post_types_select'])) ? 'selected' : '' ;
+				echo "<option {$selected} value='{$post_type->name}'>{$post_type->label}</option>";
+			}
+			echo "</select>";
 		}
-		echo "</select>";
 
 		echo "<p><b>" . __('Already populated post types (by system)','wp-drive') . "</b></p><p>";
 		foreach($rest_post_types as $post_type)

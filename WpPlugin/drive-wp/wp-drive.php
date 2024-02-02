@@ -5,11 +5,11 @@
  * Description: Enhances the capabilities of the Windows Application "WordpressDrive" by adding content size Information, ability to modify media files and to populate custom post types to REST API. 
  * Text Domain: wp-drive
  * Domain Path: /languages/
- * Version: 0.5.0
+ * Version: 0.5.1
  * Author: The Ripper
  * Author URI: https://profiles.wordpress.org/theripper
  * Requires at least: 4.7
- * Tested up to: 5.7
+ * Tested up to: 6.4.3
  * Requires PHP: 5.4
  * License: GPLv3 or later
  *

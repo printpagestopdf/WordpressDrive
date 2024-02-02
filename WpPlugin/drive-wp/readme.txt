@@ -2,9 +2,9 @@
 Contributors: theripper
 Tags: windows drive, rest api, change attachment file
 Requires at least: 4.7
-Tested up to: 6.0
+Tested up to: 6.4.3
 Requires PHP: 5.4
-Stable tag: 0.5.0
+Stable tag: 0.5.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -51,6 +51,10 @@ None
 None
 
 == Changelog ==
+= 0.5.1 =
+* Bugfix admin screen if there are none custom posttypes
+* tested with wp 6.4.3
+
 = 0.5 =
 * Allow to populate custom post types to REST API
 * Allow to replace file with a new uploaded image via REST API
@@ -64,4 +68,5 @@ None
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 == Version history ==
+0.5.1 - Bugfix release
 0.5 - Initial release.
